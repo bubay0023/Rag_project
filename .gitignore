@@ -1,0 +1,21 @@
+# Python virtual environment
+genaienv/
+.venv/
+
+# Environment variables
+.env
+
+# Datasets
+dataset/
+
+# Common Python build artifacts and temporary files
+__pycache__/
+*.pyc
+*.pyd
+*.pyo
+.Python/
+
+# IDE specific files (e.g., VS Code)
+.vscode/
+
+test.py
