@@ -19,3 +19,4 @@ __pycache__/
 .vscode/
 
 test.py
+main.py

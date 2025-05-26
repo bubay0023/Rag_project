@@ -34,14 +34,21 @@ class QdrantDB:
             points=points
         )
         output = {'count': self.client.count(collection_name=collection_name), 'status': operation_info.status}
-        self.client.close()
+        
         return output
     
     def delete_collection(self, collection_name):
         try:
             self.client.delete_collection(collection_name=collection_name)
-            self.client.close()
             return f"Collection {collection_name} deleted successfully"
         except Exception as e:
             return f"Error deleting collection {collection_name}: {str(e)}"
+        
+    def Qdrant_search(self, collection_name, query_vector, limit):
+        search_result = self.client.search(
+            collection_name=collection_name,
+            query_vector=query_vector,
+            limit=limit
+        )
+        return search_result
         
